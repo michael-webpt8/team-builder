@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-
+import Team from './components/Team';
+import Form from './components/Form';
 import './App.css';
 
 function App() {
-  const[team, setTeam] = useState([
+  const[teammates, setTeammates] = useState([
     {
       name: 'Mikey',
       email: 'mikeyjhavoc@gmail.com',
@@ -22,7 +23,8 @@ function App() {
   ])
   return (
     <div className="App">
-     
+      <Form />
+      <Team teammates={teammates} />
     </div>
   );
 }
