@@ -31,7 +31,8 @@ function Form(props) {
     return (
         <div>
           <TeamForm onSubmit={handleSubmit}> 
-            <label htmlFor="user-name">Name:</label>
+          <UserWrapper>
+                <UserLabel htmlFor="user-name">Name:</UserLabel>
                 <input 
                     type="text" 
                     id="user-name" 
@@ -41,31 +42,33 @@ function Form(props) {
                     placeholder="Name" 
                     required
                 />
-                <br />
-            <label htmlFor="user-email">Email:</label>
-                <input 
-                    type="email" 
-                    id="user-email"
-                    name="email" 
-                    onChange={handleChange} 
-                    value={newTeammate.email} 
-                    placeholder="Email"
-                    required
-                />
-                <br />
-            <label htmlFor="user-role">Role:</label>
-                <input 
-                    type="text" 
-                    id="user-role" 
-                    name="role" 
-                    onChange={handleChange} 
-                    value={newTeammate.role} 
-                    placeholder="Role"
-                    required
-                />
-                <br />
-            <button type="submit">Add User</button>
-            <button type="button" onClick={resetForm}>Reset</button>
+          </UserWrapper>
+          <EmailWrapper>
+            <EmailLabel htmlFor="user-email">Email:</EmailLabel>
+            <input 
+                type="email" 
+                id="user-email"
+                name="email" 
+                onChange={handleChange} 
+                value={newTeammate.email} 
+                placeholder="Email"
+                required
+            />
+          </EmailWrapper>
+          <RoleWrapper>
+            <RoleLabel htmlFor="user-role">Role:</RoleLabel>
+            <input 
+                type="text" 
+                id="user-role" 
+                name="role" 
+                onChange={handleChange} 
+                value={newTeammate.role} 
+                placeholder="Role"
+                required
+            />
+          </RoleWrapper>
+            <SubmitButton type="submit">Add User</SubmitButton>
+            <ResetButton type="button" onClick={resetForm}>Reset</ResetButton>
                  
           </TeamForm>
         </div>
@@ -75,4 +78,52 @@ export default Form;
 
 const TeamForm = styled.form`
     margin-top: 20px;
+    background-color: skyblue;
+    padding: 10px;
+`;
+
+const UserWrapper = styled.div`
+    margin-bottom: 5px;
+`;
+
+const UserLabel = styled.label`
+    padding-right: 5px;
+`;
+
+const EmailWrapper = styled.div`
+    margin-bottom: 5px;
+`;
+
+const EmailLabel = styled.label` 
+    padding-right: 8px;
+`;
+
+const RoleWrapper = styled.div`
+    margin-bottom: 5px;
+`;
+
+const RoleLabel = styled.label` 
+    padding-right: 13px;
+`;
+
+const SubmitButton = styled.button` 
+    width: 10%;
+    height: 40px;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: ghostwhite;
+        color: skyblue;
+    }
+`;
+
+const ResetButton = styled.button`
+       width: 10%;
+    height: 40px;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: ghostwhite;
+        color: skyblue;
+    } 
 `;
