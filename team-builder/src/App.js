@@ -23,7 +23,7 @@ function App() {
   ])
   return (
     <div className="App">
-      <Form />
+      <Form setTeammates={setTeammates} teammates={teammates} />
       <Team teammates={teammates} />
     </div>
   );
